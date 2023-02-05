@@ -1,0 +1,22 @@
+type Query {
+    compteList : [Compte],
+    compteById (id : String) : Compte,
+    deleteCompte (id : String) : Boolean
+}
+type Mutation{
+    createCompte (compte : RequestDTO) : Compte
+}
+type Compte {
+    id : String,
+    creation_compte : Float,
+    solde_compte : Float,
+    devise_compte : String,
+    typeCompte : String
+}
+
+input RequestDTO {
+    solde_compte : Float,
+    devise_compte : String,
+    typeCompte : String
+}
+
